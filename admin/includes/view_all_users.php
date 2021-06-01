@@ -45,7 +45,7 @@
                 <td>$user_editedDate</td>
                 <td>$user_createdDate</td>
                 <td><a class="btn btn-primary" href='users.php?source=edit_user&u_id={$user_id}'>Edit</a></td>
-                <td><a class="btn btn-danger" href='users.php?delete={$user_id}'>Delete</a></td>
+                <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete {$user_username}?');" href='users.php?delete={$user_id}'>Delete</a></td>
             </tr>
         USERS_ONE;
     }
