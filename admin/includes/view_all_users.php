@@ -40,7 +40,7 @@
                 <td>$user_firstname</td>
                 <td>$user_lastname</td>
                 <td>$user_email</td>
-                <td>$user_image</td>
+                <td><img style="width:50px;" src='../images/$user_image' alt="User image" /></td>
                 <td>$user_role</td>
                 <td>$user_editedDate</td>
                 <td>$user_createdDate</td>

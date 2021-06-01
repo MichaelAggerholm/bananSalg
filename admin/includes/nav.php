@@ -34,7 +34,7 @@
                         <a href="users.php">View all Users</a>
                     </li>
                     <li>
-                        <a href="#">Add User</a>
+                        <a href="users.php?source=add_user">Add User</a>
                     </li>
                 </ul>
             </li>
