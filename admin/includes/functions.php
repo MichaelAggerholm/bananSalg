@@ -1,6 +1,6 @@
 <?php
 
-function deleteTask($user_id){
+function deleteUser($user_id){
     global $conn;
 
     if (isset($_GET['delete'])){

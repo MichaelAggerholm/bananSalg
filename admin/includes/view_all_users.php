@@ -50,8 +50,8 @@
         USERS_ONE;
     }
 
-    // Delete task
-    deleteTask($user_id);
+    // Delete user
+    deleteUser($user_id);
     ?>
     </tbody>
 </table>
