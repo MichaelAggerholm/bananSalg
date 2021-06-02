@@ -9,6 +9,25 @@ if($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
 }
 
+$create_countries = "CREATE TABLE IF NOT EXISTS countries (
+country_id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+country_title VARCHAR(255) NOT NULL,
+category_editedDate DATE NOT NULL,
+category_createdDate DATE NOT NULL
+)";
+$create_countries_table = $conn->query($create_countries);
+
+$create_categories = "CREATE TABLE IF NOT EXISTS categories (
+category_id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+category_title VARCHAR(255) NOT NULL,
+category_description VARCHAR(255) NOT NULL,
+category_image TEXT NOT NULL,
+category_rating SMALLINT(5) NOT NULL,
+category_editedDate DATE NOT NULL,
+category_createdDate DATE NOT NULL
+)";
+$create_categories_table = $conn->query($create_categories);
+
 $create_products = "CREATE TABLE IF NOT EXISTS products (
 product_id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 product_title VARCHAR(255) NOT NULL,
