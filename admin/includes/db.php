@@ -9,6 +9,20 @@ if($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
 }
 
+$create_products = "CREATE TABLE IF NOT EXISTS products (
+product_id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+product_title VARCHAR(255) NOT NULL,
+product_description VARCHAR(255) NOT NULL,
+product_image TEXT NOT NULL,
+product_rating SMALLINT(5) NOT NULL,
+product_price DECIMAL(10,0) NOT NULL,
+product_category_id INT(3) NOT NULL,
+product_country_id INT(3) NOT NULL,
+product_editedDate DATE NOT NULL,
+product_createdDate DATE NOT NULL
+)";
+$create_products_table = $conn->query($create_products);
+
 $create_users = "CREATE TABLE IF NOT EXISTS users (
 user_id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 user_username VARCHAR(255) NOT NULL,
