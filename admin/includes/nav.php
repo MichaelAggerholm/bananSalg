@@ -31,14 +31,26 @@
                 <a href="javascript:;" data-toggle="collapse" data-target="#usersDropdown"><i class="fa fa-fw fas fa-user"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="usersDropdown" class="collapse">
                     <li>
-                        <a href="users.php">View all Users</a>
+                        <a href="users.php">All Users</a>
                     </li>
                     <li>
                         <a href="users.php?source=add_user">Add User</a>
                     </li>
                 </ul>
             </li>
-        </ul>
-    </div>
 
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#productsDropdown"><i class="fa fa-fw fa-exchange"></i> Products <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="productsDropdown" class="collapse">
+                    <li>
+                        <a href="Products.php">All Products</a>
+                    </li>
+                    <li>
+                        <a href="Products.php?source=add_Product">Add Product</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
 </nav>
