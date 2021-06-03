@@ -14,7 +14,7 @@ if (isset($_POST['create_product'])){
     move_uploaded_file($product_image_temp, "../images/$product_image");
 
     $stmt = $conn->prepare("INSERT INTO products(product_title, product_description, product_image, product_rating, product_price, product_category_id, product_country_id, product_editedDate, product_createdDate) VALUES(?, ?, ?, ?, ?, ?, ?, now(), now())");
-    $stmt->bind_param("sstidii", $product_title, $product_description, $product_image, $product_rating, $product_price, $product_category_id, $product_country_id);
+    $stmt->bind_param("sssidii", $product_title, $product_description, $product_image, $product_rating, $product_price, $product_category_id, $product_country_id);
     $stmt->execute();
     $stmt->close();
     header("Location: products.php");
@@ -58,9 +58,9 @@ if (isset($_POST['create_product'])){
                 $category_title = $row['category_title'];
 
                 echo "<td>{$category_title}</td>";
-                ?>
-                <option value="<?php echo $category_title ?>"><?php echo ucfirst($category_title) ?></option>
-            <?php } ?>
+                echo "<option value='{$category_id}'>{$category_title}</option>";
+            }
+            ?>
         </select>
     </div>
 
@@ -78,15 +78,15 @@ if (isset($_POST['create_product'])){
                 $country_id = $row['country_id'];
                 $country_title = $row['country_title'];
 
-                ?>
-                <option value="<?php echo $country_title ?>"><?php echo ucfirst($country_title) ?></option>
-            <?php } ?>
+                echo "<option value='{$country_id}'>{$country_title}</option>";
+             }
+             ?>
         </select>
     </div>
 
     <div class="form-group">
         <label for="product_description">Description:</label>
-        <textarea class="form-control" id="summernote" name="product_description"></textarea>
+        <textarea class="form-control" name="product_description" id="summernote"></textarea>
     </div>
 
     <div class="form-group">
