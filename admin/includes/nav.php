@@ -43,10 +43,10 @@
                 <a href="javascript:;" data-toggle="collapse" data-target="#productsDropdown"><i class="fa fa-fw fa-exchange"></i> Products <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="productsDropdown" class="collapse">
                     <li>
-                        <a href="Products.php">All Products</a>
+                        <a href="products.php">All Products</a>
                     </li>
                     <li>
-                        <a href="Products.php?source=add_Product">Add Product</a>
+                        <a href="products.php?source=add_product">Add Product</a>
                     </li>
                 </ul>
             </li>
