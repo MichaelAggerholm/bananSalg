@@ -76,13 +76,13 @@
                 <td>$product_editedDate</td>
                 <td>$product_createdDate</td>
                 <td><a class="btn btn-primary" href='products.php?source=edit_product&p_id={$product_id}'>Edit</a></td>
-                <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete {$product_title}?');" href='products.php?delete={$product_id}'>Delete</a></td>
+                <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete $product_title');" href='products.php?delete={$product_id}'>Delete</a></td>
             </tr>
         USERS_TWO;
     }
 
     // Delete user
-    deleteProduct($product_id);
+    deleteProduct();
     ?>
     </tbody>
 </table>
