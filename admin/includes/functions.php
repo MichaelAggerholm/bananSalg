@@ -24,3 +24,16 @@ function deleteProduct(){
         header("Location: products.php");
     }
 }
+
+function deleteCountry(){
+    global $conn;
+
+    if (isset($_GET['delete'])){
+        $delete_country_by_id = $_GET['delete'];
+        $stmt = $conn->prepare("DELETE FROM countries WHERE country_id = ?");
+        $stmt->bind_param("i", $delete_country_by_id);
+        $stmt->execute();
+        $stmt->close();
+        header("Location: countries.php");
+    }
+}

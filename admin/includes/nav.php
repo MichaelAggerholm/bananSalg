@@ -50,6 +50,19 @@
                     </li>
                 </ul>
             </li>
+
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#countriesDropdown"><i class="fa fa-fw fa-exchange"></i> Countries <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="countriesDropdown" class="collapse">
+                    <li>
+                        <a href="countries.php">All countries</a>
+                    </li>
+                    <li>
+                        <a href="countries.php?source=add_country">Add country</a>
+                    </li>
+                </ul>
+            </li>
+
         </ul>
 
     </div>
