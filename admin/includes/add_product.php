@@ -36,7 +36,14 @@ if (isset($_POST['create_product'])){
 
     <div class="form-group">
         <label for="product_rating">Rating:</label>
-        <input type="text" class="form-control" name="product_rating">
+        <br/>
+        <select class="form-control" name="product_rating" id="product_rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
     </div>
 
     <div class="form-group">

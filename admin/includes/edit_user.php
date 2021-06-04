@@ -34,7 +34,7 @@ if (isset($_POST['update_user'])){
 
     if (empty($user_image)){
         $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = ?");
-        $stmt->bind_param("s", $the_user_id);
+        $stmt->bind_param("i", $the_user_id);
         $stmt->execute();
         $select_image = $stmt->get_result();
         $stmt->close();
@@ -54,32 +54,32 @@ if (isset($_POST['update_user'])){
 ?>
 <form action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
-        <label for="username">Username:</label>
+        <label for="user_username">Username:</label>
         <input type="text" value='<?php echo $user_username; ?>' class="form-control" name="user_username">
     </div>
 
     <div class="form-group">
-        <label for="username">Password:</label>
+        <label for="user_password">Password:</label>
         <input type="password" value='<?php echo $user_password; ?>' class="form-control" name="user_password">
     </div>
 
     <div class="form-group">
-        <label for="firstname">Firstname:</label>
+        <label for="user_firstname">Firstname:</label>
         <input type="text" value='<?php echo $user_firstname; ?>' class="form-control" name="user_firstname">
     </div>
 
     <div class="form-group">
-        <label for="author">Lastname:</label>
+        <label for="user_lastname">Lastname:</label>
         <input type="text" value='<?php echo $user_lastname; ?>' class="form-control" name="user_lastname">
     </div>
 
     <div class="form-group">
-        <label for="author">Email:</label>
+        <label for="user_email">Email:</label>
         <input type="text" value='<?php echo $user_email; ?>' class="form-control" name="user_email">
     </div>
 
     <div class="form-group">
-        <label for="image">Image:</label>
+        <label for="user_image">Image:</label>
         <br/>
         <img style="width: 300px;" src="../images/<?php echo $user_image; ?>" />
         <br/><br/>
@@ -87,7 +87,7 @@ if (isset($_POST['update_user'])){
     </div>
 
     <div class="form-group">
-        <label for="status">Role:</label>
+        <label for="user_role">Role:</label>
         <br/>
         <select class="form-control" name="user_role" id="user_role">
             <?php
