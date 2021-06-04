@@ -7,6 +7,7 @@
         <th>Image</th>
         <th>Rating</th>
         <th>Price</th>
+        <th>Status</th>
         <th>Category</th>
         <th>Country</th>
         <th>Last edited</th>
@@ -30,6 +31,7 @@
         $product_image = $row['product_image'];
         $product_rating = $row['product_rating'];
         $product_price = $row['product_price'];
+        $product_status = $row['product_status'];
         $product_category_id = $row['product_category_id'];
         $product_country_id = $row['product_country_id'];
         $product_editedDate = $row['product_editedDate'];
@@ -44,6 +46,7 @@
                 <td><img style="width:50px;" src='../images/$product_image' alt="Product image" /></td>
                 <td>$product_rating</td>
                 <td>$product_price Kr.-</td>
+                <td>$product_status</td>
         USERS_ONE;
 
         $stmt = $conn->prepare("SELECT * FROM categories WHERE category_id = ?");

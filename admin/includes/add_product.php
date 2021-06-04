@@ -6,6 +6,7 @@ if (isset($_POST['create_product'])){
     $product_image_temp = $_FILES['product_image']['tmp_name'];
     $product_rating = $_POST['product_rating'];
     $product_price = $_POST['product_price'];
+    $product_status = $_POST['product_status'];
     $product_category_id = $_POST['product_category_id'];
     $product_country_id = $_POST['product_country_id'];
     $product_editedDate = date('Y-m-d');
@@ -13,8 +14,8 @@ if (isset($_POST['create_product'])){
 
     move_uploaded_file($product_image_temp, "../images/$product_image");
 
-    $stmt = $conn->prepare("INSERT INTO products(product_title, product_description, product_image, product_rating, product_price, product_category_id, product_country_id, product_editedDate, product_createdDate) VALUES(?, ?, ?, ?, ?, ?, ?, now(), now())");
-    $stmt->bind_param("sssidii", $product_title, $product_description, $product_image, $product_rating, $product_price, $product_category_id, $product_country_id);
+    $stmt = $conn->prepare("INSERT INTO products(product_title, product_description, product_image, product_rating, product_price, product_status, product_category_id, product_country_id, product_editedDate, product_createdDate) VALUES(?, ?, ?, ?, ?, ?, ?, ?, now(), now())");
+    $stmt->bind_param("sssidsii", $product_title, $product_description, $product_image, $product_rating, $product_price, $product_status, $product_category_id, $product_country_id);
     $stmt->execute();
     $stmt->close();
     header("Location: products.php");
@@ -41,6 +42,16 @@ if (isset($_POST['create_product'])){
     <div class="form-group">
         <label for="product_price">Price:</label>
         <input type="text" class="form-control" name="product_price">
+    </div>
+
+    <div class="form-group">
+        <label for="product_status">Status:</label>
+        <br/>
+        <select class="form-control" name="product_status" id="product_status">
+            <option value="active">Active</option>
+            <option value="draft">Draft</option>
+            <option value="expired">Expired</option>
+        </select>
     </div>
 
     <div class="form-group">
