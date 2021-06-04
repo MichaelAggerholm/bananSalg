@@ -44,7 +44,7 @@
                 <td>$product_title</td>
                 <td>$product_description</td>
                 <td><img style="width:50px;" src='../images/$product_image' alt="Product image" /></td>
-                <td>$product_rating</td>
+                <td>$product_rating / 5</td>
                 <td>$product_price Kr.-</td>
                 <td>$product_status</td>
         USERS_ONE;

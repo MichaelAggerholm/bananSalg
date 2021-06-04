@@ -24,7 +24,6 @@ if (isset($_POST['update_product'])){
     $product_description = $_POST['product_description'];
     $product_image = $_FILES['product_image']['name'];
     $product_image_temp = $_FILES['product_image']['tmp_name'];
-    $product_rating = $_POST['product_rating'];
     $product_price = $_POST['product_price'];
     $product_status = $_POST['product_status'];
     $product_category_id = $_POST['product_category_id'];
@@ -45,8 +44,8 @@ if (isset($_POST['update_product'])){
         }
     }
 
-    $stmt = $conn->prepare("UPDATE products SET product_title = ?, product_description = ?, product_image = ?, product_rating = ?, product_price = ?, product_status = ?, product_category_id = ?, product_country_id = ?, product_editedDate = now() WHERE product_id = ?");
-    $stmt->bind_param("sssidsiii", $product_title, $product_description, $product_image, $product_rating, $product_price, $product_status, $product_category_id, $product_country_id, $the_product_id);
+    $stmt = $conn->prepare("UPDATE products SET product_title = ?, product_description = ?, product_image = ?, product_price = ?, product_status = ?, product_category_id = ?, product_country_id = ?, product_editedDate = now() WHERE product_id = ?");
+    $stmt->bind_param("sssdsiii", $product_title, $product_description, $product_image, $product_price, $product_status, $product_category_id, $product_country_id, $the_product_id);
     $stmt->execute();
     $stmt->close();
     header("Location: products.php");
@@ -71,20 +70,6 @@ if (isset($_POST['update_product'])){
         <br/><br/>
         <input type="file" name="product_image">
     </div>
-
-<!--    BURDE IKKE VÆRE MED!!!!!!!-->
-    <div class="form-group">
-        <label for="product_rating">Rating:</label>
-        <br/>
-        <select class="form-control" name="product_rating" id="product_rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </div>
-    <!--    BURDE IKKE VÆRE MED!!!!!!!-->
 
     <div class="form-group">
 <!--        SHOULD MAYBE NOT BE TEXT?!-->
