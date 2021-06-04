@@ -61,7 +61,7 @@ if (isset($_POST['update_product'])){
 
     <div class="form-group">
         <label for="product_description">Description:</label>
-        <input type="text" value='<?php echo $product_description; ?>' class="form-control" name="product_description">
+        <textarea class="form-control" name="product_description" id="summernote"><?php echo $product_description; ?></textarea>
     </div>
 
     <div class="form-group">
