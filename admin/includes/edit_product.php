@@ -45,7 +45,7 @@ if (isset($_POST['update_product'])){
         }
     }
 
-    $stmt = $conn->prepare("UPDATE users SET product_title = ?, product_description = ?, product_image = ?, product_rating = ?, product_price = ?, product_status = ?, product_category_id = ?, product_country_id = ?, product_editedDate = now() WHERE product_id = ?");
+    $stmt = $conn->prepare("UPDATE products SET product_title = ?, product_description = ?, product_image = ?, product_rating = ?, product_price = ?, product_status = ?, product_category_id = ?, product_country_id = ?, product_editedDate = now() WHERE product_id = ?");
     $stmt->bind_param("sssidsiii", $product_title, $product_description, $product_image, $product_rating, $product_price, $product_status, $product_category_id, $product_country_id, $the_product_id);
     $stmt->execute();
     $stmt->close();
