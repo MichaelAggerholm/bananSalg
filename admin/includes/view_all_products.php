@@ -27,7 +27,7 @@
     while ($row = mysqli_fetch_assoc($select_all_products)){
         $product_id = $row['product_id'];
         $product_title = $row['product_title'];
-        $product_description = $row['product_description'];
+        $product_description = substr($row['product_description'], 0,50);
         $product_image = $row['product_image'];
         $product_rating = $row['product_rating'];
         $product_price = $row['product_price'];
