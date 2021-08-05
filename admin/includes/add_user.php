@@ -13,12 +13,13 @@ if (isset($_POST['create_user'])){
 
     move_uploaded_file($user_image_temp, "../images/$user_image");
 
-    $stmt = $conn->prepare("INSERT INTO users(user_username, user_password, user_firstname, user_lastname, user_email, user_image, user_role, user_editedDate, user_createdDate) VALUES(?, ?, ?, ?, ?, ?, ?, now(), now())");
-    $stmt->bind_param("sssssss", $user_username, $user_password, $user_firstname, $user_lastname, $user_email, $user_image, $user_role);
-    $stmt->execute();
-    $stmt->close();
-    header("Location: users.php"); // burde muligvis være i en if() ?
-
+    if (isset($conn)) {
+        $stmt = $conn->prepare("INSERT INTO users(user_username, user_password, user_firstname, user_lastname, user_email, user_image, user_role, user_editedDate, user_createdDate) VALUES(?, ?, ?, ?, ?, ?, ?, now(), now())");
+        $stmt->bind_param("sssssss", $user_username, $user_password, $user_firstname, $user_lastname, $user_email, $user_image, $user_role);
+        $stmt->execute();
+        $stmt->close();
+        header("Location: users.php"); // burde muligvis være i en if() ?
+    }
 }
 ?>
 <form action="" method="post" enctype="multipart/form-data">
